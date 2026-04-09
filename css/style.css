@@ -220,6 +220,12 @@ body {
   transform: translateY(-2px);
 }
 
+.header__phone-mobile {
+    display: none;
+    color: var(--color-white);
+    margin-right: 15px;
+}
+
 /* Hero Section */
 .hero {
   margin-top: 50px;
@@ -935,10 +941,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .header__content {
-    flex-wrap: wrap;
-  }
-
   .header__logo a {
     font-size: 18px;
     gap: 12px;
@@ -970,6 +972,7 @@ body {
     visibility: hidden;
     transform: translateY(-20px);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    overflow-x: hidden;
   }
 
   .header__nav.active {
@@ -1042,6 +1045,10 @@ body {
 
   .header__phone {
     display: none;
+  }
+
+  .header__phone-mobile {
+    display: block;
   }
 
   .burger-menu {
@@ -1127,7 +1134,7 @@ body {
 
 @media (max-width: 480px) {
   .hero__title {
-    font-size: 28px;
+    font-size: 38px;
   }
 
   .header__logo a {
