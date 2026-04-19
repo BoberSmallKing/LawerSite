@@ -4,9 +4,11 @@ from email.message import EmailMessage
 from pathlib import Path
 
 from flask import Flask, jsonify, request, render_template
+from whitenoise import WhiteNoise
 
 
 app = Flask(__name__)
+app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/', prefix='static/')
 
 
 def _send_contact_email(name: str, phone: str, email: str, message: str) -> None:
