@@ -45,11 +45,12 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(10, 22, 40, 0.95);
-  backdrop-filter: blur(10px);
+  background-color: rgba(10, 22, 40, 0.85);
+  backdrop-filter: blur(15px);
   z-index: 1000;
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(107, 163, 216, 0.2);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(107, 163, 216, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .header__content {
@@ -66,7 +67,6 @@ body {
   letter-spacing: 1px;
   transition: var(--transition);
   display: flex;
-  align-items: center;
   gap: 14px;
 }
 
@@ -82,22 +82,53 @@ body {
 .header__logo {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.header__logo:hover .logo img {
+  filter: brightness(0) saturate(100%) invert(67%) sepia(19%) saturate(842%) hue-rotate(174deg) brightness(92%) contrast(88%);
+}
+
+.header__logo:hover .brand-name__main {
+  color: var(--color-accent);
 }
 
 .logo img {
-  width: 80px;
+  width: 140px;
+  max-height: 70px;
   height: auto;
+  object-fit: contain;
   display: block;
+  filter: brightness(0) invert(1);
+  transition: var(--transition);
 }
 
 .brand-name {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
   color: var(--color-white);
   text-decoration: none;
   transition: var(--transition);
+  align-items: flex-start;
+}
+
+.brand-name__main {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.brand-name__sub {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase; /* Сделал капсом для строгости */
+  color: var(--color-accent); /* Добавил акцентный цвет */
+  margin-top: 4px;
 }
 
 .brand-name:hover {
@@ -120,11 +151,12 @@ body {
 .nav__link {
   color: var(--color-white);
   text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 16px; /* Увеличил шрифт */
+  font-weight: 600; /* Сделал жирнее */
   position: relative;
   transition: var(--transition);
-  padding: 5px 0;
+  padding: 8px 0;
+  letter-spacing: 0.3px;
 }
 
 .nav__link::after {
@@ -292,8 +324,86 @@ body {
     box-shadow 0.2s;
 }
 
-.btn--block {
-  width: 100%;
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 1px solid var(--color-accent);
+}
+
+.btn--outline:hover {
+  background-color: rgba(107, 163, 216, 0.1);
+  color: var(--color-accent);
+}
+
+/* Error Page */
+.error-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.error-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 150px 0 100px;
+  text-align: center;
+}
+
+.error-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.error-code {
+  font-size: 150px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--color-accent);
+  margin-bottom: 20px;
+  opacity: 0.5;
+  letter-spacing: -5px;
+}
+
+.error-title {
+  font-size: 36px;
+  margin-bottom: 24px;
+}
+
+.error-description {
+  font-size: 18px;
+  color: var(--color-text-gray);
+  margin-bottom: 30px;
+}
+
+.error-legal-note {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-text-light);
+  background: rgba(26, 47, 74, 0.5);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  border-left: 4px solid var(--color-accent);
+}
+
+.error-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 100px;
+  }
+  .error-title {
+    font-size: 28px;
+  }
+  .error-actions {
+    flex-direction: column;
+  }
 }
 
 /* Hero Visual */
@@ -396,7 +506,7 @@ body {
 
 /* Page Hero */
 .page-hero {
-  margin-top: 120px;
+  margin-top: 95px;
   padding: 30px 0;
   background: linear-gradient(
     135deg,
@@ -946,6 +1056,9 @@ body {
     gap: 12px;
   }
 
+  .page-hero {
+    margin-top: 65px;
+  }
   .header__logo a::before {
     width: 40px;
     height: 40px;
@@ -953,11 +1066,16 @@ body {
   }
 
   .logo img {
-    width: 96px;
+    width: 110px;
+    max-height: 50px;
   }
 
-  .brand-name {
-    font-size: 16px;
+  .brand-name__main {
+    font-size: 22px;
+  }
+
+  .brand-name__sub {
+    font-size: 9px;
   }
 
   .header__nav {
@@ -970,14 +1088,16 @@ body {
     border-bottom: 1px solid var(--color-dark-blue-3);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transform: translateY(-20px);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;
     overflow-x: hidden;
   }
 
   .header__nav.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: translateY(0);
   }
 
@@ -1019,13 +1139,21 @@ body {
     transform: none;
     margin-top: 10px;
     width: 100%;
-    opacity: 1;
-    visibility: visible;
-    display: block;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
     background-color: transparent;
     border: none;
-    padding: 0;
+    padding: 0 0 0 15px;
     min-width: unset;
+  }
+
+  .dropdown-arrow {
+    display: none;
+  }
+
+  .nav__dropdown:hover .dropdown-arrow {
+    transform: none;
   }
 
   .dropdown__menu a {

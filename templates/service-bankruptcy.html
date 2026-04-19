@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Банкротство — Правовое агентство «БиС»</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   </head>
   <body>
-    <div id="header"></div>
+    {% include 'header.html' %}
 
     <section class="page-hero">
       <div class="container">
@@ -59,7 +59,7 @@
           </div>
 
           <div class="service-detail__cta">
-            <a href="contacts.html" class="btn btn--primary"
+            <a href="{{ url_for('page', page_name='contacts') }}" class="btn btn--primary"
               >Получить консультацию</a
             >
           </div>
@@ -67,8 +67,8 @@
       </div>
     </section>
 
-    <div id="footer"></div>
+    {% include 'footer.html' %}
 
-    <script src="js/main.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   </body>
 </html>

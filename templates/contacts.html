@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты — Правовое агентство «БиС»</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div id="header"></div>
+    {% include 'header.html' %}
 
     <!-- Page Hero -->
     <section class="page-hero">
@@ -71,9 +70,9 @@
         </div>
     </section>
 
-    <div id="footer"></div>
+    {% include 'footer.html' %}
 
-    <script src="js/main.js"></script>
-    <script src="js/email-handler.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/email-handler.js') }}"></script>
 </body>
 </html>

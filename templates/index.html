@@ -6,10 +6,10 @@
     <title>
       Правовое агентство «БиС» — Ведущая юридическая компания в Калининграде
     </title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   </head>
   <body>
-    <div id="header"></div>
+    {% include 'header.html' %}
 
     <!-- Hero Section -->
     <section class="hero">
@@ -24,13 +24,13 @@
               Основана в 2010 году. Ваш надежный партнер в решении юридических
               задач.
             </p>
-            <a href="contacts.html" class="btn btn--primary"
+            <a href="{{ url_for('page', page_name='contacts') }}" class="btn btn--primary"
               >Получить консультацию</a
             >
           </div>
           <div class="hero__visual">
             <img
-              src="images/main_photo.png"
+              src="{{ url_for('static', filename='images/main_photo.png') }}"
               alt="Команда правового агентства «БиС» — одна из лучших в Калининграде"
               class="hero__image"
             />
@@ -64,28 +64,28 @@
       <div class="container">
         <h2 class="section__title">Наши услуги</h2>
         <div class="hashtags__grid">
-          <a href="service-bankruptcy.html" class="hashtag">#Банкротство</a>
-          <a href="service-inheritance.html" class="hashtag"
+          <a href="{{ url_for('page', page_name='service-bankruptcy') }}" class="hashtag">#Банкротство</a>
+          <a href="{{ url_for('page', page_name='service-inheritance') }}" class="hashtag"
             >#НаследственноеПраво</a
           >
-          <a href="service-trademarks.html" class="hashtag">#ТоварныеЗнаки</a>
-          <a href="service-real-estate.html" class="hashtag">#Недвижимость</a>
-          <a href="service-arbitration.html" class="hashtag">#Арбитраж</a>
-          <a href="service-corporate.html" class="hashtag"
+          <a href="{{ url_for('page', page_name='service-trademarks') }}" class="hashtag">#ТоварныеЗнаки</a>
+          <a href="{{ url_for('page', page_name='service-real-estate') }}" class="hashtag">#Недвижимость</a>
+          <a href="{{ url_for('page', page_name='service-arbitration') }}" class="hashtag">#Арбитраж</a>
+          <a href="{{ url_for('page', page_name='service-corporate') }}" class="hashtag"
             >#КорпоративноеПраво</a
           >
-          <a href="service-pretension.html" class="hashtag"
+          <a href="{{ url_for('page', page_name='service-pretension') }}" class="hashtag"
             >#ПретензионнаяСтадия</a
           >
-          <a href="service-business-protection.html" class="hashtag"
+          <a href="{{ url_for('page', page_name='service-business-protection') }}" class="hashtag"
             >#ЗащитаБизнеса</a
           >
         </div>
       </div>
     </section>
 
-    <div id="footer"></div>
+    {% include 'footer.html' %}
 
-    <script src="js/main.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   </body>
 </html>

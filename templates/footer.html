@@ -11,10 +11,10 @@
       <div class="footer__col">
         <h3 class="footer__title">Навигация</h3>
         <ul class="footer__links">
-          <li><a href="about.html">О компании</a></li>
-          <li><a href="services.html">Услуги</a></li>
-          <li><a href="prices.html">Цены</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="{{ url_for('page', page_name='about') }}">О компании</a></li>
+          <li><a href="{{ url_for('page', page_name='services') }}">Услуги</a></li>
+          <li><a href="{{ url_for('page', page_name='prices') }}">Цены</a></li>
+          <li><a href="{{ url_for('page', page_name='contacts') }}">Контакты</a></li>
         </ul>
       </div>
       <div class="footer__col">

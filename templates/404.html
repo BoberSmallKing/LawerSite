@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статья 404: Страница не найдена — БИС</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="error-page">
+    {% include 'header.html' %}
+
+    <main class="error-content">
+        <div class="container">
+            <div class="error-wrapper">
+                <div class="error-code">404</div>
+                <h1 class="error-title">Состав правонарушения не обнаружен!</h1>
+                <p class="error-description">
+                    К сожалению, искомая страница совершила побег из-под стражи или никогда не существовала в данной юрисдикции. 
+                    Наши юристы уже готовят апелляцию в Google, но пока мы рекомендуем вернуться в правовое поле.
+                </p>
+                <div class="error-legal-note">
+                    <strong>Примечание:</strong> Данный инцидент не является основанием для подачи иска о моральном ущербе. 
+                    Нажимая на кнопку ниже, вы соглашаетесь с тем, что заблудились по собственной воле.
+                </div>
+                <div class="error-actions">
+                    <a href="{{ url_for('home') }}" class="btn btn--primary">Вернуться в правовое поле</a>
+                    <a href="{{ url_for('page', page_name='services') }}" class="btn btn--outline">Изучить кодекс услуг</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% include 'footer.html' %}
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

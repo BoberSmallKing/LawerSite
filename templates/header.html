@@ -1,0 +1,73 @@
+<header class="header">
+  <div class="container">
+    <div class="header__content">
+      <div class="header__logo">
+        <a href="{{ url_for('home') }}" class="logo" aria-label="На главную">
+          <img
+            src="{{ url_for('static', filename='images/logo1.png') }}"
+            alt="Правовое агентство «БиС» логотип"
+          />
+        </a>
+        <a href="{{ url_for('home') }}" class="brand-name">
+          <span class="brand-name__main">БИС</span>
+          <span class="brand-name__sub">правовое агентство</span>
+        </a>
+      </div>
+
+      <nav class="header__nav">
+        <div class="nav__mobile-header">
+
+        </div>
+        <ul class="nav__list">
+          <li><a href="{{ url_for('page', page_name='about') }}" class="nav__link">О компании</a></li>
+          <li class="nav__dropdown">
+            <a href="{{ url_for('page', page_name='services') }}" class="nav__link js-open-submenu"
+              >Услуги <span class="dropdown-arrow">▼</span></a
+            >
+            <ul class="dropdown__menu">
+              <li><a href="{{ url_for('page', page_name='service-bankruptcy') }}">Банкротство</a></li>
+              <li>
+                <a href="{{ url_for('page', page_name='service-arbitration') }}">Арбитражный процесс</a>
+              </li>
+              <li>
+                <a href="{{ url_for('page', page_name='service-corporate') }}">Корпоративное право</a>
+              </li>
+              <li>
+                <a href="{{ url_for('page', page_name='service-pretension') }}"
+                  >Претензионная стадия</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('page', page_name='service-business-protection') }}"
+                  >Правовая защита бизнеса</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('page', page_name='service-inheritance') }}">Наследственное право</a>
+              </li>
+              <li>
+                <a href="{{ url_for('page', page_name='service-trademarks') }}"
+                  >Товарные знаки и лицензии</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('page', page_name='service-real-estate') }}">Недвижимость и земля</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="{{ url_for('page', page_name='prices') }}" class="nav__link">Цены</a></li>
+          <li><a href="{{ url_for('page', page_name='contacts') }}" class="nav__link">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="tel:+79062387060" class="header__phone">+79062387060</a>
+        <button class="burger-menu" aria-label="Открыть меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Услуги — Правовое агентство «БиС»</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   </head>
   <body>
-    <div id="header"></div>
+    {% include 'header.html' %}
 
     <!-- Page Hero -->
     <section class="page-hero">
@@ -20,7 +20,7 @@
     <section class="services-grid">
       <div class="container">
         <div class="services__cards">
-          <a href="service-bankruptcy.html" class="service-card">
+          <a href="{{ url_for('page', page_name='service-bankruptcy') }}" class="service-card">
             <div class="service-card__icon">📋</div>
             <h3 class="service-card__title">Банкротство</h3>
             <p class="service-card__description">
@@ -28,7 +28,7 @@
               Защита интересов кредиторов и должников.
             </p>
           </a>
-          <a href="service-arbitration.html" class="service-card">
+          <a href="{{ url_for('page', page_name='service-arbitration') }}" class="service-card">
             <div class="service-card__icon">🏛️</div>
             <h3 class="service-card__title">Арбитражный процесс</h3>
             <p class="service-card__description">
@@ -36,7 +36,7 @@
               Корпоративные споры, договорные отношения.
             </p>
           </a>
-          <a href="service-corporate.html" class="service-card">
+          <a href="{{ url_for('page', page_name='service-corporate') }}" class="service-card">
             <div class="service-card__icon">🏢</div>
             <h3 class="service-card__title">Корпоративное право</h3>
             <p class="service-card__description">
@@ -44,7 +44,7 @@
               ликвидация, корпоративные соглашения, споры между участниками
             </p>
           </a>
-          <a href="service-pretension.html" class="service-card">
+          <a href="{{ url_for('page', page_name='service-pretension') }}" class="service-card">
             <div class="service-card__icon">📝</div>
             <h3 class="service-card__title">
               Претензионная стадия и досудебное урегулирование
@@ -54,7 +54,7 @@
               привлечение профессиональных медиаторов.
             </p>
           </a>
-          <a href="service-business-protection.html" class="service-card">
+          <a href="{{ url_for('page', page_name='service-business-protection') }}" class="service-card">
             <div class="service-card__icon">🛡️</div>
             <h3 class="service-card__title">Правовая защита бизнеса</h3>
             <p class="service-card__description">
@@ -63,19 +63,20 @@
             </p>
           </a>
           <a
-            href="service-inheritance.html"
+            href="{{ url_for('page', page_name='service-inheritance') }}"
             class="service-card"
             id="inheritance"
           >
             <div class="service-card__icon">⚖️</div>
-            <h3 class="service-card__title">Наследственное право</h3>
+            <h3 class="service-card__title">Наследственное и семейное право</h3>
             <p class="service-card__description">
               Ведение наследственных дел, установление юридически значимых
-              фактов, признание права в порядке наследования.
+              фактов, признание права в порядке наследования. Брачные договоры,
+              разводы, раздел имушества супругов, алименты.
             </p>
           </a>
           <a
-            href="service-trademarks.html"
+            href="{{ url_for('page', page_name='service-trademarks') }}"
             class="service-card"
             id="trademarks"
           >
@@ -87,7 +88,7 @@
             </p>
           </a>
           <a
-            href="service-real-estate.html"
+            href="{{ url_for('page', page_name='service-real-estate') }}"
             class="service-card"
             id="real-estate"
           >
@@ -104,8 +105,8 @@
       </div>
     </section>
 
-    <div id="footer"></div>
+    {% include 'footer.html' %}
 
-    <script src="js/main.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   </body>
 </html>

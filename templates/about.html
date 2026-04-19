@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>О компании — Правовое агентство «БиС»</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   </head>
   <body>
-    <div id="header"></div>
+    {% include 'header.html' %}
 
     <!-- About Company Section -->
     <section class="page-hero">
-        <div class="container">
-            <h1 class="page-hero__title">О компании</h1>
-        </div>
+      <div class="container">
+        <h1 class="page-hero__title">О компании</h1>
+      </div>
     </section>
 
     <section class="about-content">
@@ -22,16 +22,11 @@
           <p class="about__text">
             Правовое агентство « БиС» было основано в 2010 году группой юристов,
             объединившихся для оказания качественных юридических услуг для
-            бизнеса и граждан.
-          </p>
-          <p class="about__text">
-            Наш подход основан на внимательном отношении к клиентам, понимании
-            бизнес-процессов и поставленных юридических задач, креативном
-            подходе к разрешению проблемных ситуаций.
-          </p>
-          <p class="about__text">
-            Мы сотрудничаем с консультантами по бухгалтерскому учету и аудиту
-            для обеспечения комплексной помощи своим клиентам.
+            бизнеса и граждан. Наш подход основан на внимательном отношении к
+            клиентам, понимании бизнес-процессов и поставленных юридических
+            задач, креативном подходе к разрешению проблемных ситуаций. Мы
+            сотрудничаем с консультантами по бухгалтерскому учету и аудиту для
+            обеспечения комплексной помощи своим клиентам.
           </p>
         </div>
 
@@ -40,8 +35,9 @@
           <p class="about__text">
             Предоставлять юридические услуги высочайшего качества, которые
             помогают бизнесу расти, защищать свои интересы и эффективно решать
-            правовые вопросы. Мы стремимся к долгосрочным партнерским отношениям
-            с нашими клиентами, основанным на взаимном доверии и результатах.
+            правовые вопросы. Помогать гражданам, оказавшимся в сложных
+            ситуациях. Мы стремимся к долгосрочным партнерским отношениям с
+            нашими клиентами, основанным на взаимном доверии и результатах.
           </p>
         </div>
 
@@ -88,18 +84,26 @@
         <div class="team__grid">
           <div class="team__member">
             <div class="team__photo">
-              <img src="images/member-1.jpg" alt="Боброва Оксана Александровна" class="team__photo-img">
+              <img
+                src="{{ url_for('static', filename='images/member-1.jpg') }}"
+                alt="Боброва Оксана Александровна"
+                class="team__photo-img"
+              />
             </div>
             <h3 class="team__name">Боброва Оксана Александровна</h3>
             <p class="team__role">Юрист, корпоративное право и сделки M&A</p>
             <p class="team__description">
               Эксперт по корпоративному праву и сделкам с участием иностранных
-              лиц.
+              лиц. Банкротство.
             </p>
           </div>
           <div class="team__member">
             <div class="team__photo">
-              <img src="images/member-1.jpg" alt="Бобров Денис Евгеньевич" class="team__photo-img">
+              <img
+                src="{{ url_for('static', filename='images/member-1.jpg') }}"
+                alt="Бобров Денис Евгеньевич"
+                class="team__photo-img"
+              />
             </div>
             <h3 class="team__name">Бобров Денис Евгеньевич</h3>
             <p class="team__role">
@@ -111,7 +115,11 @@
           </div>
           <div class="team__member">
             <div class="team__photo">
-              <img src="images/member-1.jpg" alt="Поляруш Элина Петровна" class="team__photo-img">
+              <img
+                src="{{ url_for('static', filename='images/member-1.jpg') }}"
+                alt="Поляруш Элина Петровна"
+                class="team__photo-img"
+              />
             </div>
             <h3 class="team__name">Поляруш Элина Петровна</h3>
             <p class="team__role">Юрист с доп. образованием психолога</p>
@@ -124,8 +132,8 @@
       </div>
     </section>
 
-    <div id="footer"></div>
+    {% include 'footer.html' %}
 
-    <script src="js/main.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   </body>
 </html>
