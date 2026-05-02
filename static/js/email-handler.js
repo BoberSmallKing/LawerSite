@@ -26,6 +26,11 @@
         return;
       }
 
+      if (!formData.get("consent") || !formData.get("privacy")) {
+        showMessage("Необходимо подтвердить согласие с политикой конфиденциальности", "error");
+        return;
+      }
+
       // Show loading state
       const submitButton = contactForm.querySelector('button[type="submit"]');
       const originalButtonText = submitButton.textContent;
