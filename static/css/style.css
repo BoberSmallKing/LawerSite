@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
 :root {
   --color-dark-blue: #0a1628;
@@ -18,7 +18,7 @@
   --color-text-gray: #b8d4e8;
   --color-text-light: #7a9bb8;
   --transition: all 0.3s ease;
-  --font-main: 'Manrope', sans-serif;
+  --font-main: "Manrope", sans-serif;
 }
 
 html {
@@ -32,6 +32,9 @@ body {
   line-height: 1.6;
   font-size: 16px;
   overflow-x: hidden;
+}
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -88,7 +91,8 @@ body {
 }
 
 .header__logo:hover .logo img {
-  filter: brightness(0) saturate(100%) invert(67%) sepia(19%) saturate(842%) hue-rotate(174deg) brightness(92%) contrast(88%);
+  filter: brightness(0) saturate(100%) invert(67%) sepia(19%) saturate(842%)
+    hue-rotate(174deg) brightness(92%) contrast(88%);
 }
 
 .header__logo:hover .brand-name__main {
@@ -254,9 +258,41 @@ body {
 }
 
 .header__phone-mobile {
-    display: none;
-    color: var(--color-white);
-    margin-right: 15px;
+  display: none;
+  color: var(--color-white);
+  margin-right: 15px;
+}
+
+/* Burger Menu */
+.burger-menu {
+  background-color: transparent !important;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  z-index: 1001;
+  display: none;
+}
+
+.burger-menu span {
+  display: block;
+  width: 32px;
+  height: 4px;
+  background-color: #ffffff !important;
+  margin: 7px 0;
+  transition: var(--transition);
+  border-radius: 2px;
+}
+
+.burger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
 }
 
 /* Hero Section */
@@ -480,7 +516,7 @@ body {
   padding: 80px 0;
 }
 
-.team{
+.team {
   margin-bottom: 60px;
 }
 
@@ -531,7 +567,6 @@ body {
   color: var(--color-white);
 }
 
-
 .about__section {
   margin-bottom: 80px;
 }
@@ -545,6 +580,7 @@ body {
   line-height: 1.8;
   color: var(--color-text-gray);
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 .approach__grid {
@@ -572,8 +608,6 @@ body {
   color: var(--color-text-gray);
   line-height: 1.7;
 }
-
-
 
 .team__grid {
   display: grid;
@@ -648,7 +682,6 @@ body {
   color: var(--color-text-gray);
   line-height: 1.6;
 }
-
 
 .services__cards {
   display: grid;
@@ -817,8 +850,6 @@ body {
   margin-top: 40px;
 }
 
-
-
 .contacts__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -861,8 +892,6 @@ body {
 .contact__value:hover {
   color: var(--color-accent);
 }
-
-
 
 /* Contacts Info Bar */
 .contacts-bar {
@@ -1011,9 +1040,23 @@ body {
     grid-template-columns: 1fr;
     padding: 20px;
   }
-  
-  .consultation-steps, .consultation-info {
+
+  .consultation-steps,
+  .consultation-info {
     padding: 20px;
+  }
+
+  .consultation-steps__title {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .contact-form--white {
+    padding: 25px 20px;
+  }
+  
+  .map-container {
+    height: 250px !important;
   }
 }
 
@@ -1057,8 +1100,6 @@ body {
   color: var(--color-text-gray);
   line-height: 1.6;
 }
-
-
 
 .form-group {
   margin-bottom: 18px;
@@ -1124,6 +1165,67 @@ body {
   background-color: var(--color-white);
   border-color: var(--color-accent);
   box-shadow: 0 8px 20px rgba(107, 163, 216, 0.08);
+}
+
+/* Checkbox Styles */
+.form-group--checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.form-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: var(--transition);
+}
+
+.form-checkbox:checked {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.form-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--color-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.form-checkbox-label {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+/* Links in form */
+.contact-form--white .form-checkbox-label a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.contact-form--white .form-checkbox-label a:hover {
+  border-bottom-color: var(--color-accent);
+  color: var(--color-dark-blue);
 }
 
 /* FAQ Section */
@@ -1223,17 +1325,6 @@ body {
   width: 100%;
 }
 
-.contact-form--white .form-group--checkbox {
-  margin-top: 5px;
-  margin-bottom: 12px;
-}
-
-.contact-form--white .form-checkbox-label {
-  color: #64748b;
-  font-size: 13px;
-  line-height: 1.4;
-}
-
 .btn--dark {
   background-color: var(--color-dark-blue);
   color: var(--color-white);
@@ -1263,7 +1354,7 @@ body {
   .contacts-bar__grid {
     grid-template-columns: 1fr;
   }
-  
+
   .consultation-grid {
     grid-template-columns: 1fr;
     gap: 60px;
@@ -1331,7 +1422,6 @@ body {
 }
 
 .social-link {
-
   width: 40px;
   height: 40px;
   background-color: transparent;
@@ -1454,7 +1544,7 @@ body {
   color: var(--color-accent);
 }
 
-.burger-menu{
+.burger-menu {
   display: none;
 }
 
@@ -1542,7 +1632,8 @@ body {
     visibility: hidden;
     pointer-events: none;
     transform: translateY(-20px);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+      visibility 0.3s;
     overflow-x: hidden;
   }
 
@@ -1636,7 +1727,7 @@ body {
   }
 
   .burger-menu.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(8px, 8px);
   }
 
   .burger-menu.active span:nth-child(2) {
@@ -1644,7 +1735,7 @@ body {
   }
 
   .burger-menu.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+    transform: rotate(-45deg) translate(8px, -8px);
   }
 
   .hero {
@@ -1759,79 +1850,62 @@ body {
 
 /* Pricing Tables */
 .pricing-tables {
-    max-width: 900px;
-    margin: 0 auto;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .pricing-category__title {
-    font-size: 28px;
-    font-weight: 600;
-    color: var(--color-white);
-    margin-top: 60px;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid var(--color-accent);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-top: 60px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--color-accent);
 }
 
 .price-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--color-dark-blue-2);
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--color-dark-blue-3);
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-dark-blue-2);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--color-dark-blue-3);
 }
 
 .price-table th,
 .price-table td {
-    padding: 20px;
-    text-align: left;
-    border-bottom: 1px solid var(--color-dark-blue-3);
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-dark-blue-3);
 }
 
 .price-table th {
-    background-color: var(--color-dark-blue-3);
-    color: var(--color-white);
-    font-weight: 600;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  background-color: var(--color-dark-blue-3);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .price-table td {
-    color: var(--color-text-gray);
-    line-height: 1.7;
+  color: var(--color-text-gray);
+  line-height: 1.7;
 }
 
 .price-table td:last-child {
-    text-align: right;
-    font-weight: 600;
-    color: var(--color-white);
-    font-size: 18px;
-    white-space: nowrap;
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-white);
+  font-size: 18px;
+  white-space: nowrap;
 }
 
 .price-table tbody tr:last-child td {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .price-table tbody tr:hover {
-    background-color: var(--color-dark-blue-3);
-}
-
-.burger-menu {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 1001;
-}
-
-.burger-menu span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: var(--color-white);
-  margin: 5px 0;
-  transition: var(--transition);
+  background-color: var(--color-dark-blue-3);
 }

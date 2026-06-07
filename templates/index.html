@@ -6,7 +6,10 @@
     <title>
       Правовое агентство «БиС» — Ведущая юридическая компания в Калининграде
     </title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
   </head>
   <body>
     {% include 'header.html' %}
@@ -24,7 +27,9 @@
               Основана в 2010 году. Ваш надежный партнер в решении юридических
               задач.
             </p>
-            <a href="{{ url_for('page', page_name='contacts') }}" class="btn btn--primary"
+            <a
+              href="{{ url_for('page', page_name='contacts') }}"
+              class="btn btn--primary"
               >Получить консультацию</a
             >
           </div>
@@ -64,20 +69,44 @@
       <div class="container">
         <h2 class="section__title">Наши услуги</h2>
         <div class="hashtags__grid">
-          <a href="{{ url_for('page', page_name='service-bankruptcy') }}" class="hashtag">#Банкротство</a>
-          <a href="{{ url_for('page', page_name='service-inheritance') }}" class="hashtag"
+          <a
+            href="{{ url_for('page', page_name='service-bankruptcy') }}"
+            class="hashtag"
+            >#Банкротство</a
+          >
+          <a
+            href="{{ url_for('page', page_name='service-inheritance') }}"
+            class="hashtag"
             >#НаследственноеПраво</a
           >
-          <a href="{{ url_for('page', page_name='service-trademarks') }}" class="hashtag">#ТоварныеЗнаки</a>
-          <a href="{{ url_for('page', page_name='service-real-estate') }}" class="hashtag">#Недвижимость</a>
-          <a href="{{ url_for('page', page_name='service-arbitration') }}" class="hashtag">#Арбитраж</a>
-          <a href="{{ url_for('page', page_name='service-corporate') }}" class="hashtag"
+          <a
+            href="{{ url_for('page', page_name='service-trademarks') }}"
+            class="hashtag"
+            >#ТоварныеЗнаки</a
+          >
+          <a
+            href="{{ url_for('page', page_name='service-real-estate') }}"
+            class="hashtag"
+            >#Недвижимость</a
+          >
+          <a
+            href="{{ url_for('page', page_name='service-arbitration') }}"
+            class="hashtag"
+            >#Арбитраж</a
+          >
+          <a
+            href="{{ url_for('page', page_name='service-corporate') }}"
+            class="hashtag"
             >#КорпоративноеПраво</a
           >
-          <a href="{{ url_for('page', page_name='service-pretension') }}" class="hashtag"
+          <a
+            href="{{ url_for('page', page_name='service-pretension') }}"
+            class="hashtag"
             >#ПретензионнаяСтадия</a
           >
-          <a href="{{ url_for('page', page_name='service-business-protection') }}" class="hashtag"
+          <a
+            href="{{ url_for('page', page_name='service-business-protection') }}"
+            class="hashtag"
             >#ЗащитаБизнеса</a
           >
         </div>
@@ -87,7 +116,9 @@
     <!-- FAQ Section -->
     <section class="faq-section fade-in-up">
       <div class="container">
-        <h2 class="section__title" style="text-align: center;">Часто задаваемые вопросы</h2>
+        <h2 class="section__title" style="text-align: center">
+          Часто задаваемые вопросы
+        </h2>
         <div class="faq-list">
           <div class="faq-item">
             <button class="faq-question">
@@ -96,7 +127,10 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer__content">
-                Первая консультация длится около 15-30 минут. Мы выслушаем вашу проблему, проведем первичный анализ документов и предложим варианты решения. Для первичной оценки этого достаточно, чтобы вы понимали перспективы дела.
+                Первая консультация длится около 15-30 минут. Мы выслушаем вашу
+                проблему, проведем первичный анализ документов и предложим
+                варианты решения. Для первичной оценки этого достаточно, чтобы
+                вы понимали перспективы дела.
               </div>
             </div>
           </div>
@@ -107,7 +141,10 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer__content">
-                Все зависит от вашей ситуации. Обычно это паспорт и любые документы, имеющие отношение к делу: договоры, переписка, судебные повестки или решения. Если вы не уверены, наш юрист подскажет список при записи.
+                Все зависит от вашей ситуации. Обычно это паспорт и любые
+                документы, имеющие отношение к делу: договоры, переписка,
+                судебные повестки или решения. Если вы не уверены, наш юрист
+                подскажет список при записи.
               </div>
             </div>
           </div>
@@ -118,7 +155,10 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer__content">
-                Стоимость услуг индивидуальна и зависит от сложности дела. Мы работаем прозрачно: фиксируем стоимость в договоре, и она не меняется в процессе работы. Ознакомиться с базовыми тарифами можно в разделе «Цены».
+                Стоимость услуг индивидуальна и зависит от сложности дела. Мы
+                работаем прозрачно: фиксируем стоимость в договоре, и она не
+                меняется в процессе работы. Ознакомиться с базовыми тарифами
+                можно в разделе «Цены».
               </div>
             </div>
           </div>
@@ -129,7 +169,10 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer__content">
-                Да, мы оказываем услуги дистанционно по всей России. Современные средства связи и электронный документооборот позволяют нам эффективно защищать интересы клиентов независимо от их местонахождения.
+                Да, мы оказываем услуги дистанционно по всей России. Современные
+                средства связи и электронный документооборот позволяют нам
+                эффективно защищать интересы клиентов независимо от их
+                местонахождения.
               </div>
             </div>
           </div>
@@ -143,38 +186,98 @@
         <div class="consultation-card">
           <div class="consultation-info">
             <h2 class="consultation-steps__title">МЫ ВСЕГДА НА СВЯЗИ</h2>
-            <p style="color: var(--color-text-gray); margin-bottom: 30px;">Посетите наш офис в Калининграде или оставьте заявку онлайн. Мы перезвоним вам в течение 15 минут в рабочее время.</p>
-            <div id="index-map" class="map-container" style="height: 350px;"></div>
+            <p style="color: var(--color-text-gray); margin-bottom: 30px">
+              Посетите наш офис в Калининграде или оставьте заявку онлайн. Мы
+              перезвоним вам в течение 15 минут в рабочее время.
+            </p>
+            <div
+              id="index-map"
+              class="map-container"
+              style="height: 350px"
+            ></div>
           </div>
 
           <div class="consultation-form-wrapper">
             <form class="contact-form contact-form--white" id="contactForm">
-              <h3 class="contact-form__title">ЗАПЛАНИРОВАТЬ ЗВОНОК</h3>
+              <h3 class="contact-form__title">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h3>
               <div class="form-group">
-                <input type="text" id="name" name="name" class="form-input" placeholder="Ваше полное имя" required />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  placeholder="Ваше полное имя"
+                  required
+                />
               </div>
               <div class="form-group">
-                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Номер телефона" required />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  placeholder="Номер телефона"
+                  required
+                />
               </div>
               <div class="form-group">
-                <input type="email" id="email" name="email" class="form-input" placeholder="Эл. почта" />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="Эл. почта"
+                />
               </div>
               <div class="form-group">
-                <textarea id="message" name="message" class="form-textarea" placeholder="Опишите кратко вашу ситуацию" rows="4"></textarea>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-textarea"
+                  placeholder="Опишите кратко вашу ситуацию"
+                  rows="4"
+                ></textarea>
               </div>
               <div class="form-group form-group--checkbox">
-                <input type="checkbox" id="consent" name="consent" class="form-checkbox" required />
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  class="form-checkbox"
+                  required
+                />
                 <label for="consent" class="form-checkbox-label">
-                  Я даю согласие на <a href="{{ url_for('page', page_name='consent') }}" target="_blank">обработку персональных данных</a>
+                  Я даю согласие на
+                  <a
+                    href="{{ url_for('page', page_name='consent') }}"
+                    target="_blank"
+                    >обработку персональных данных</a
+                  >
                 </label>
               </div>
               <div class="form-group form-group--checkbox">
-                <input type="checkbox" id="privacy" name="privacy" class="form-checkbox" required />
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  name="privacy"
+                  class="form-checkbox"
+                  required
+                />
                 <label for="privacy" class="form-checkbox-label">
-                  Я ознакомлен с <a href="{{ url_for('page', page_name='privacy') }}" target="_blank">политикой конфиденциальности</a>
+                  Я ознакомлен с
+                  <a
+                    href="{{ url_for('page', page_name='privacy') }}"
+                    target="_blank"
+                    >политикой конфиденциальности</a
+                  >
                 </label>
               </div>
-              <button type="submit" class="btn btn--primary btn--block btn--dark">Отправить</button>
+              <button
+                type="submit"
+                class="btn btn--primary btn--block btn--dark"
+              >
+                Отправить
+              </button>
             </form>
           </div>
         </div>
@@ -183,21 +286,28 @@
 
     {% include 'footer.html' %}
 
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ваш_ключ" type="text/javascript"></script>
+    <script
+      src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ваш_ключ"
+      type="text/javascript"
+    ></script>
     <script>
-        ymaps.ready(function() {
-            var myMap = new ymaps.Map("index-map", {
-                center: [54.717757, 20.521881],
-                zoom: 16,
-                controls: ['zoomControl']
-            });
-            var myPlacemark = new ymaps.Placemark([54.717757, 20.521881], {
-                hintContent: 'Правовое агентство «БиС»',
-                balloonContent: 'г. Калининград, ул. 9 Апреля, д. 52'
-            }, { preset: 'islands#blueLawIcon' });
-            myMap.geoObjects.add(myPlacemark);
-            myMap.behaviors.disable('scrollZoom');
+      ymaps.ready(function () {
+        var myMap = new ymaps.Map("index-map", {
+          center: [54.715103, 20.524645],
+          zoom: 18,
+          controls: ["zoomControl"],
         });
+        var myPlacemark = new ymaps.Placemark(
+          [54.715103, 20.524645],
+          {
+            hintContent: "Правовое агентство «БиС»",
+            balloonContent: "г. Калининград, ул. 9 Апреля, д. 52",
+          },
+          { preset: "islands#blueLawIcon" }
+        );
+        myMap.geoObjects.add(myPlacemark);
+        myMap.behaviors.disable("scrollZoom");
+      });
     </script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/email-handler.js') }}"></script>
