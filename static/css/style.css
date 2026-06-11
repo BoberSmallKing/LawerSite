@@ -17,8 +17,36 @@
   --color-accent-lighter: #a8c8f0;
   --color-text-gray: #b8d4e8;
   --color-text-light: #7a9bb8;
+  --color-success: #4caf50;
+  --color-success-bg: rgba(76, 175, 80, 0.1);
+  --color-error: #f44336;
+  --color-error-bg: rgba(244, 67, 54, 0.1);
   --transition: all 0.3s ease;
   --font-main: "Manrope", sans-serif;
+}
+
+/* Form Messages */
+.form-message {
+  padding: 16px 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.form-message--success {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.form-message--error {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+  border: 1px solid rgba(244, 67, 54, 0.3);
 }
 
 html {

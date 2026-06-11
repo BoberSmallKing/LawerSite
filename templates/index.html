@@ -1,385 +1,351 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Юридические услуги в Калининграде. Банкротство физических лиц, наследственные споры, арбитраж, защита бизнеса. Более 15 лет практики."
-    />
-    <meta
-      name="keywords"
-      content="юрист Калининград, юридическая компания Калининград, банкротство Калининград, арбитражный юрист Калининград, защита бизнеса Калининград"
-    />
-    <meta property="og:title" content="Правовое агентство БиС" />
-    <meta
-      property="og:description"
-      content="Юридические услуги в Калининграде"
-    />
-    <meta
-      property="og:image"
-      content="https://bis-law.ru/static/images/main_photo.png"
-    />
-    <meta property="og:type" content="website" />
-    <title>
-      Правовое агентство «БиС» — Ведущая юридическая компания в Калининграде
-    </title>
-    <link
-      rel="shortcut icon"
-      href="{{ url_for('static', filename='images/logo.svg') }}"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      (function (m, e, t, r, i, k, a) {
-        m[i] =
-          m[i] ||
-          function () {
-            (m[i].a = m[i].a || []).push(arguments);
-          };
-        m[i].l = 1 * new Date();
-        for (var j = 0; j < document.scripts.length; j++) {
-          if (document.scripts[j].src === r) {
-            return;
-          }
-        }
-        (k = e.createElement(t)),
-          (a = e.getElementsByTagName(t)[0]),
-          (k.async = 1),
-          (k.src = r),
-          a.parentNode.insertBefore(k, a);
-      })(
-        window,
-        document,
-        "script",
-        "https://mc.yandex.ru/metrika/tag.js?id=109785064",
-        "ym"
-      );
+{% extends "base.html" %}
+{% block title %}Главная страница{% endblock %}
 
-      ym(109785064, "init", {
-        ssr: true,
-        webvisor: true,
-        clickmap: true,
-        ecommerce: "dataLayer",
-        referrer: document.referrer,
-        url: location.href,
-        accurateTrackBounce: true,
-        trackLinks: true,
-      });
-    </script>
-    <noscript
-      ><div>
+{% block extra_head %}
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+  (function (m, e, t, r, i, k, a) {
+    m[i] =
+      m[i] ||
+      function () {
+        (m[i].a = m[i].a || []).push(arguments);
+      };
+    m[i].l = 1 * new Date();
+    for (var j = 0; j < document.scripts.length; j++) {
+      if (document.scripts[j].src === r) {
+        return;
+      }
+    }
+    (k = e.createElement(t)),
+      (a = e.getElementsByTagName(t)[0]),
+      (k.async = 1),
+      (k.src = r),
+      a.parentNode.insertBefore(k, a);
+  })(
+    window,
+    document,
+    "script",
+    "https://mc.yandex.ru/metrika/tag.js?id=109785064",
+    "ym"
+  );
+
+  ym(109785064, "init", {
+    ssr: true,
+    webvisor: true,
+    clickmap: true,
+    ecommerce: "dataLayer",
+    referrer: document.referrer,
+    url: location.href,
+    accurateTrackBounce: true,
+    trackLinks: true,
+  });
+</script>
+<noscript
+  ><div>
+    <img
+      src="https://mc.yandex.ru/watch/109785064"
+      style="position: absolute; left: -9999px"
+      alt=""
+    /></div
+></noscript>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__text">
+        <h1 class="hero__title">
+          Ведущая юридическая компания в
+          <span class="accent">Калининграде</span>
+        </h1>
+        <p class="hero__subtitle">
+          Основана в 2010 году. Ваш надежный партнер в решении юридических
+          задач.
+        </p>
+        <a
+          href="{{ url_for('page', page_name='contacts') }}"
+          class="btn btn--primary"
+          >Получить консультацию</a
+        >
+      </div>
+      <div class="hero__visual">
         <img
-          src="https://mc.yandex.ru/watch/109785064"
-          style="position: absolute; left: -9999px"
-          alt=""
-        /></div
-    ></noscript>
-  </head>
-  <body>
-    {% include 'header.html' %}
+          src="{{ url_for('static', filename='images/main_photo.png') }}"
+          alt="Команда правового агентства «БиС» — одна из лучших в Калининграде"
+          class="hero__image"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero__content">
-          <div class="hero__text">
-            <h1 class="hero__title">
-              Ведущая юридическая компания в
-              <span class="accent">Калининграде</span>
-            </h1>
-            <p class="hero__subtitle">
-              Основана в 2010 году. Ваш надежный партнер в решении юридических
-              задач.
-            </p>
-            <a
-              href="{{ url_for('page', page_name='contacts') }}"
-              class="btn btn--primary"
-              >Получить консультацию</a
-            >
+<!-- Stats Section -->
+<section class="stats">
+  <div class="container">
+    <div class="stats__grid">
+      <div class="stats__item">
+        <div class="stats__number accent">15+</div>
+        <div class="stats__label">Лет опыта</div>
+      </div>
+      <div class="stats__item">
+        <div class="stats__number accent">500+</div>
+        <div class="stats__label">Оказано услуг</div>
+      </div>
+      <div class="stats__item">
+        <div class="stats__number accent">92%</div>
+        <div class="stats__label">Выигранных дел</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Hashtags Section -->
+<section class="services-hashtags">
+  <div class="container">
+    <h2 class="section__title">Наши услуги</h2>
+    <div class="hashtags__grid">
+      <a
+        href="{{ url_for('page', page_name='service-bankruptcy') }}"
+        class="hashtag"
+        >#Банкротство</a
+      >
+      <a
+        href="{{ url_for('page', page_name='service-inheritance') }}"
+        class="hashtag"
+        >#НаследственноеПраво</a
+      >
+      <a
+        href="{{ url_for('page', page_name='service-trademarks') }}"
+        class="hashtag"
+        >#ТоварныеЗнаки</a
+      >
+      <a
+        href="{{ url_for('page', page_name='service-real-estate') }}"
+        class="hashtag"
+        >#Недвижимость</a
+      >
+      <a
+        href="{{ url_for('page', page_name='service-arbitration') }}"
+        class="hashtag"
+        >#Арбитраж</a
+      >
+      <a
+        href="{{ url_for('page', page_name='service-corporate') }}"
+        class="hashtag"
+        >#КорпоративноеПраво</a
+      >
+      <a
+        href="{{ url_for('page', page_name='service-pretension') }}"
+        class="hashtag"
+        >#ПретензионнаяСтадия</a
+      >
+      <a
+        href="{{ url_for('page', page_name='service-business-protection') }}"
+        class="hashtag"
+        >#ЗащитаБизнеса</a
+      >
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section fade-in-up">
+  <div class="container">
+    <h2 class="section__title" style="text-align: center">
+      Часто задаваемые вопросы
+    </h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Как проходит первая консультация?</span>
+          <div class="faq-icon"></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer__content">
+            Первая консультация длится около 15-30 минут. Мы выслушаем вашу
+            проблему, проведем первичный анализ документов и предложим
+            варианты решения. Для первичной оценки этого достаточно, чтобы
+            вы понимали перспективы дела.
           </div>
-          <div class="hero__visual">
-            <img
-              src="{{ url_for('static', filename='images/main_photo.png') }}"
-              alt="Команда правового агентства «БиС» — одна из лучших в Калининграде"
-              class="hero__image"
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Какие документы нужно взять с собой?</span>
+          <div class="faq-icon"></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer__content">
+            Все зависит от вашей ситуации. Обычно это паспорт и любые
+            документы, имеющие отношение к делу: договоры, переписка,
+            судебные повестки или решения. Если вы не уверены, наш юрист
+            подскажет список при записи.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Сколько стоят ваши услуги?</span>
+          <div class="faq-icon"></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer__content">
+            Стоимость услуг индивидуальна и зависит от сложности дела. Мы
+            работаем прозрачно: фиксируем стоимость в договоре, и она не
+            меняется в процессе работы. Ознакомиться с базовыми тарифами
+            можно в разделе «Цены».
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Работаете ли вы с иногородними клиентами?</span>
+          <div class="faq-icon"></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer__content">
+            Да, мы оказываем услуги дистанционно по всей России. Современные
+            средства связи и электронный документооборот позволяют нам
+            эффективно защищать интересы клиентов независимо от их
+            местонахождения.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map & Form Section -->
+<section class="consultation-section fade-in-up">
+  <div class="container">
+    <div class="consultation-card">
+      <div class="consultation-info">
+        <h2 class="consultation-steps__title">МЫ ВСЕГДА НА СВЯЗИ</h2>
+        <p style="color: var(--color-text-gray); margin-bottom: 30px">
+          Посетите наш офис в Калининграде или оставьте заявку онлайн. Мы
+          перезвоним вам в течение 15 минут в рабочее время.
+        </p>
+        <div
+          id="index-map"
+          class="map-container"
+          style="height: 350px"
+        ></div>
+      </div>
+
+      <div class="consultation-form-wrapper">
+        <form class="contact-form contact-form--white" id="contactForm">
+          <h3 class="contact-form__title">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h3>
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-input"
+              placeholder="Ваше полное имя"
+              required
             />
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-      <div class="container">
-        <div class="stats__grid">
-          <div class="stats__item">
-            <div class="stats__number accent">15+</div>
-            <div class="stats__label">Лет опыта</div>
+          <div class="form-group">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form-input"
+              placeholder="Номер телефона"
+              required
+            />
           </div>
-          <div class="stats__item">
-            <div class="stats__number accent">500+</div>
-            <div class="stats__label">Оказано услуг</div>
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              placeholder="Эл. почта"
+            />
           </div>
-          <div class="stats__item">
-            <div class="stats__number accent">92%</div>
-            <div class="stats__label">Выигранных дел</div>
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              class="form-textarea"
+              placeholder="Опишите кратко вашу ситуацию"
+              rows="4"
+            ></textarea>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Hashtags Section -->
-    <section class="services-hashtags">
-      <div class="container">
-        <h2 class="section__title">Наши услуги</h2>
-        <div class="hashtags__grid">
-          <a
-            href="{{ url_for('page', page_name='service-bankruptcy') }}"
-            class="hashtag"
-            >#Банкротство</a
-          >
-          <a
-            href="{{ url_for('page', page_name='service-inheritance') }}"
-            class="hashtag"
-            >#НаследственноеПраво</a
-          >
-          <a
-            href="{{ url_for('page', page_name='service-trademarks') }}"
-            class="hashtag"
-            >#ТоварныеЗнаки</a
-          >
-          <a
-            href="{{ url_for('page', page_name='service-real-estate') }}"
-            class="hashtag"
-            >#Недвижимость</a
-          >
-          <a
-            href="{{ url_for('page', page_name='service-arbitration') }}"
-            class="hashtag"
-            >#Арбитраж</a
-          >
-          <a
-            href="{{ url_for('page', page_name='service-corporate') }}"
-            class="hashtag"
-            >#КорпоративноеПраво</a
-          >
-          <a
-            href="{{ url_for('page', page_name='service-pretension') }}"
-            class="hashtag"
-            >#ПретензионнаяСтадия</a
-          >
-          <a
-            href="{{ url_for('page', page_name='service-business-protection') }}"
-            class="hashtag"
-            >#ЗащитаБизнеса</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section fade-in-up">
-      <div class="container">
-        <h2 class="section__title" style="text-align: center">
-          Часто задаваемые вопросы
-        </h2>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Как проходит первая консультация?</span>
-              <div class="faq-icon"></div>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer__content">
-                Первая консультация длится около 15-30 минут. Мы выслушаем вашу
-                проблему, проведем первичный анализ документов и предложим
-                варианты решения. Для первичной оценки этого достаточно, чтобы
-                вы понимали перспективы дела.
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Какие документы нужно взять с собой?</span>
-              <div class="faq-icon"></div>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer__content">
-                Все зависит от вашей ситуации. Обычно это паспорт и любые
-                документы, имеющие отношение к делу: договоры, переписка,
-                судебные повестки или решения. Если вы не уверены, наш юрист
-                подскажет список при записи.
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Сколько стоят ваши услуги?</span>
-              <div class="faq-icon"></div>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer__content">
-                Стоимость услуг индивидуальна и зависит от сложности дела. Мы
-                работаем прозрачно: фиксируем стоимость в договоре, и она не
-                меняется в процессе работы. Ознакомиться с базовыми тарифами
-                можно в разделе «Цены».
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Работаете ли вы с иногородними клиентами?</span>
-              <div class="faq-icon"></div>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer__content">
-                Да, мы оказываем услуги дистанционно по всей России. Современные
-                средства связи и электронный документооборот позволяют нам
-                эффективно защищать интересы клиентов независимо от их
-                местонахождения.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Map & Form Section -->
-    <section class="consultation-section fade-in-up">
-      <div class="container">
-        <div class="consultation-card">
-          <div class="consultation-info">
-            <h2 class="consultation-steps__title">МЫ ВСЕГДА НА СВЯЗИ</h2>
-            <p style="color: var(--color-text-gray); margin-bottom: 30px">
-              Посетите наш офис в Калининграде или оставьте заявку онлайн. Мы
-              перезвоним вам в течение 15 минут в рабочее время.
-            </p>
-            <div
-              id="index-map"
-              class="map-container"
-              style="height: 350px"
-            ></div>
-          </div>
-
-          <div class="consultation-form-wrapper">
-            <form class="contact-form contact-form--white" id="contactForm">
-              <h3 class="contact-form__title">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h3>
-              <div class="form-group">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  class="form-input"
-                  placeholder="Ваше полное имя"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  class="form-input"
-                  placeholder="Номер телефона"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  class="form-input"
-                  placeholder="Эл. почта"
-                />
-              </div>
-              <div class="form-group">
-                <textarea
-                  id="message"
-                  name="message"
-                  class="form-textarea"
-                  placeholder="Опишите кратко вашу ситуацию"
-                  rows="4"
-                ></textarea>
-              </div>
-              <div class="form-group form-group--checkbox">
-                <input
-                  type="checkbox"
-                  id="consent"
-                  name="consent"
-                  class="form-checkbox"
-                  required
-                />
-                <label for="consent" class="form-checkbox-label">
-                  Я даю согласие на
-                  <a
-                    href="{{ url_for('page', page_name='consent') }}"
-                    target="_blank"
-                    >обработку персональных данных</a
-                  >
-                </label>
-              </div>
-              <div class="form-group form-group--checkbox">
-                <input
-                  type="checkbox"
-                  id="privacy"
-                  name="privacy"
-                  class="form-checkbox"
-                  required
-                />
-                <label for="privacy" class="form-checkbox-label">
-                  Я ознакомлен с
-                  <a
-                    href="{{ url_for('page', page_name='privacy') }}"
-                    target="_blank"
-                    >политикой конфиденциальности</a
-                  >
-                </label>
-              </div>
-              <button
-                type="submit"
-                class="btn btn--primary btn--block btn--dark"
+          <div class="form-group form-group--checkbox">
+            <input
+              type="checkbox"
+              id="consent"
+              name="consent"
+              class="form-checkbox"
+              required
+            />
+            <label for="consent" class="form-checkbox-label">
+              Я даю согласие на
+              <a
+                href="{{ url_for('page', page_name='consent') }}"
+                target="_blank"
+                >обработку персональных данных</a
               >
-                Отправить
-              </button>
-            </form>
+            </label>
           </div>
-        </div>
+          <div class="form-group form-group--checkbox">
+            <input
+              type="checkbox"
+              id="privacy"
+              name="privacy"
+              class="form-checkbox"
+              required
+            />
+            <label for="privacy" class="form-checkbox-label">
+              Я ознакомлен с
+              <a
+                href="{{ url_for('page', page_name='privacy') }}"
+                target="_blank"
+                >политикой конфиденциальности</a
+              >
+            </label>
+          </div>
+          <button
+            type="submit"
+            class="btn btn--primary btn--block btn--dark"
+          >
+            Отправить
+          </button>
+        </form>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+{% endblock %}
 
-    {% include 'footer.html' %}
-
-    <script
-      src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ваш_ключ"
-      type="text/javascript"
-    ></script>
-    <script>
-      ymaps.ready(function () {
-        var myMap = new ymaps.Map("index-map", {
-          center: [54.715165, 20.524231],
-          zoom: 18,
-          controls: ["zoomControl"],
-        });
-        var myPlacemark = new ymaps.Placemark(
-          [54.715165, 20.524231],
-          {
-            hintContent: "Собственный значок метки",
-            balloonContent:
-              'Перейти на <a href="https://yandex.ru/maps/-/CPhprWpV" target="_blank">Карту</a>',
-          },
-          { preset: "islands#blueLawIcon" }
-        );
-        myMap.geoObjects.add(myPlacemark);
-        myMap.behaviors.disable("scrollZoom");
-      });
-    </script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/email-handler.js') }}"></script>
-  </body>
-</html>
+{% block scripts %}
+<script
+  src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ваш_ключ"
+  type="text/javascript"
+></script>
+<script>
+  ymaps.ready(function () {
+    var myMap = new ymaps.Map("index-map", {
+      center: [54.715165, 20.524231],
+      zoom: 18,
+      controls: ["zoomControl"],
+    });
+    var myPlacemark = new ymaps.Placemark(
+      [54.715165, 20.524231],
+      {
+        hintContent: "Собственный значок метки",
+        balloonContent:
+          'Перейти на <a href="https://yandex.ru/maps/-/CPhprWpV" target="_blank">Карту</a>',
+      },
+      { preset: "islands#blueLawIcon" }
+    );
+    myMap.geoObjects.add(myPlacemark);
+    myMap.behaviors.disable("scrollZoom");
+  });
+</script>
+<script src="{{ url_for('static', filename='js/email-handler.js') }}"></script>
+{% endblock %}

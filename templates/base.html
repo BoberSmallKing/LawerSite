@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>{% block title %}Правовое агентство «БиС» — Ведущая юридическая компания в Калининграде{% endblock %}</title>
+    <meta name="description" content="Юридические услуги в Калининграде. Банкротство физических лиц, наследственные споры, арбитраж, защита бизнеса. Более 15 лет практики." />
+    <meta name="keywords" content="юрист Калининград, юридическая компания Калининград, банкротство Калининград, арбитражный юрист Калининград, защита бизнеса Калининград" />
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Правовое агентство БиС" />
+    <meta property="og:description" content="Юридические услуги в Калининграде" />
+    <meta property="og:image" content="{{ url_for('static', filename='images/main_photo.png', _external=True) }}" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Favicon (на все страницы) -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.svg') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.svg') }}" type="image/svg+xml" />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    {% include 'header.html' %}
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    {% include 'footer.html' %}
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

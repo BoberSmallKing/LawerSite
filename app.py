@@ -2,10 +2,12 @@ import os
 import smtplib
 from email.message import EmailMessage
 from pathlib import Path
+from dotenv import load_dotenv
 
 from flask import Flask, jsonify, request, render_template
 from whitenoise import WhiteNoise
 
+load_dotenv()
 
 app = Flask(__name__)
 app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/', prefix='static/')
