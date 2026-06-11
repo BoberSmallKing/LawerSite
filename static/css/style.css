@@ -1050,11 +1050,11 @@ a {
     font-size: 24px;
     text-align: center;
   }
-  
+
   .contact-form--white {
     padding: 25px 20px;
   }
-  
+
   .map-container {
     height: 250px !important;
   }
@@ -1276,7 +1276,7 @@ a {
 }
 
 .faq-answer__content {
-  padding: 0 30px 25px;
+  padding: 20px 30px 25px;
   color: var(--color-text-gray);
   line-height: 1.8;
 }

@@ -268,16 +268,17 @@
       ymaps.ready(init);
       function init() {
         var myMap = new ymaps.Map("yandex-map", {
-          center: [54.715103, 20.524645],
+          center: [54.715165, 20.524231],
           zoom: 18,
           controls: ["zoomControl", "fullscreenControl"],
         });
 
         var myPlacemark = new ymaps.Placemark(
-          [54.715103, 20.524645],
+          [54.715165, 20.524231],
           {
-            hintContent: "Правовое агентство «БиС»",
-            balloonContent: "г. Калининград, ул. 9 Апреля, д. 52",
+            hintContent: "Собственный значок метки",
+            balloonContent:
+              'Перейти на <a href="https://yandex.ru/maps/-/CPhprWpV" target="_blank">Карту</a>',
           },
           {
             preset: "islands#blueLawIcon",

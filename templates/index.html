@@ -3,13 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Юридические услуги в Калининграде. Банкротство физических лиц, наследственные споры, арбитраж, защита бизнеса. Более 15 лет практики."
+    />
+    <meta
+      name="keywords"
+      content="юрист Калининград, юридическая компания Калининград, банкротство Калининград, арбитражный юрист Калининград, защита бизнеса Калининград"
+    />
+    <meta property="og:title" content="Правовое агентство БиС" />
+    <meta
+      property="og:description"
+      content="Юридические услуги в Калининграде"
+    />
+    <meta
+      property="og:image"
+      content="https://bis-law.ru/static/images/main_photo.png"
+    />
+    <meta property="og:type" content="website" />
     <title>
       Правовое агентство «БиС» — Ведущая юридическая компания в Калининграде
     </title>
     <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/logo.svg') }}"
+      type="image/x-icon"
+    />
+    <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
     />
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js?id=109785064",
+        "ym"
+      );
+
+      ym(109785064, "init", {
+        ssr: true,
+        webvisor: true,
+        clickmap: true,
+        ecommerce: "dataLayer",
+        referrer: document.referrer,
+        url: location.href,
+        accurateTrackBounce: true,
+        trackLinks: true,
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/109785064"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
   </head>
   <body>
     {% include 'header.html' %}
@@ -293,15 +362,16 @@
     <script>
       ymaps.ready(function () {
         var myMap = new ymaps.Map("index-map", {
-          center: [54.715103, 20.524645],
+          center: [54.715165, 20.524231],
           zoom: 18,
           controls: ["zoomControl"],
         });
         var myPlacemark = new ymaps.Placemark(
-          [54.715103, 20.524645],
+          [54.715165, 20.524231],
           {
-            hintContent: "Правовое агентство «БиС»",
-            balloonContent: "г. Калининград, ул. 9 Апреля, д. 52",
+            hintContent: "Собственный значок метки",
+            balloonContent:
+              'Перейти на <a href="https://yandex.ru/maps/-/CPhprWpV" target="_blank">Карту</a>',
           },
           { preset: "islands#blueLawIcon" }
         );
