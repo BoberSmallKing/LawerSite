@@ -1,39 +1,92 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- SEO Meta Tags -->
-    <title>{% block title %}Правовое агентство «БиС» — Ведущая юридическая компания в Калининграде{% endblock %}</title>
-    <meta name="description" content="Юридические услуги в Калининграде. Банкротство физических лиц, наследственные споры, арбитраж, защита бизнеса. Более 15 лет практики." />
-    <meta name="keywords" content="юрист Калининград, юридическая компания Калининград, банкротство Калининград, арбитражный юрист Калининград, защита бизнеса Калининград" />
-    
+    <title>
+      {% block title %}Правовое агентство «БиС» — Ведущая юридическая компания в
+      Калининграде{% endblock %}
+    </title>
+    <meta
+      name="description"
+      content="{% block description %}Юридические услуги в Калининграде. Банкротство физических лиц, наследственные споры, арбитраж, защита бизнеса. Более 15 лет практики.{% endblock %}"
+    />
+    <meta
+      name="keywords"
+      content="{% block keywords %}юрист Калининград, юридическая компания Калининград, банкротство Калининград, арбитражный юрист Калининград, защита бизнеса Калининград{% endblock %}"
+    />
+
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Правовое агентство БиС" />
-    <meta property="og:description" content="Юридические услуги в Калининграде" />
-    <meta property="og:image" content="{{ url_for('static', filename='images/main_photo.png', _external=True) }}" />
+    <meta
+      property="og:title"
+      content="{% block og_title %}Правовое агентство БиС {% endblock%}"
+    />
+    <meta
+      property="og:description"
+      content="{% block og_description %}Юридические услуги в Калининграде {% endblock%}"
+    />
+    <meta
+      property="og:image"
+      content="{{ url_for('static', filename='images/main_photo.png', _external=True) }}"
+    />
     <meta property="og:type" content="website" />
-    
+
     <!-- Favicon (на все страницы) -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.svg') }}" type="image/x-icon" />
-    <link rel="icon" href="{{ url_for('static', filename='images/logo.svg') }}" type="image/svg+xml" />
-    
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/logo.svg') }}"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logo.svg') }}"
+      type="image/svg+xml"
+    />
+
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-    
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+
+    <!-- Structured Data (Schema.org) for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Правовое агентство «БиС»",
+      "description": "Юридические услуги в Калининграде: банкротство, наследственные споры, арбитраж, защита бизнеса и другие правовые услуги.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. 9 Апреля, д. 52",
+        "addressLocality": "Калининград",
+        "postalCode": "236000",
+        "addressCountry": "RU"
+      },
+      "telephone": "+79062387060",
+      "email": "infobislaw@mail.ru",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "url": "https://lawbis.ru/",
+      "areaServed": {
+        "@type": "City",
+        "name": "Калининград"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+
     {% block extra_head %}{% endblock %}
-</head>
-<body>
+  </head>
+  <body>
     {% include 'header.html' %}
-    
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-    
+
+    <main>{% block content %}{% endblock %}</main>
+
     {% include 'footer.html' %}
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     {% block scripts %}{% endblock %}
-</body>
+  </body>
 </html>

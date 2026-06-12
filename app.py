@@ -4,7 +4,7 @@ from email.message import EmailMessage
 from pathlib import Path
 from dotenv import load_dotenv
 
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, send_from_directory
 from whitenoise import WhiteNoise
 
 load_dotenv()
@@ -55,6 +55,16 @@ def _send_contact_email(name: str, phone: str, email: str, message: str) -> None
 @app.route("/")
 def home():
     return render_template("index.html")
+
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(app.static_folder, 'sitemap.xml')
+
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory(app.static_folder, 'robots.txt')
 
 
 @app.route("/<page_name>")
