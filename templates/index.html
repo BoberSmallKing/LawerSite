@@ -1,8 +1,6 @@
-{% extends "base.html" %}
-{% block title %}Главная страница{% endblock %}
+{% extends "base.html" %} {% block title %}Главная страница{% endblock %}
+{%block extra_head %}
 
-{% block extra_head %}
-<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
   (function (m, e, t, r, i, k, a) {
     m[i] =
@@ -25,11 +23,11 @@
     window,
     document,
     "script",
-    "https://mc.yandex.ru/metrika/tag.js?id=109785064",
+    "https://mc.yandex.ru/metrika/tag.js?id=109799623",
     "ym"
   );
 
-  ym(109785064, "init", {
+  ym(109799623, "init", {
     ssr: true,
     webvisor: true,
     clickmap: true,
@@ -43,14 +41,12 @@
 <noscript
   ><div>
     <img
-      src="https://mc.yandex.ru/watch/109785064"
+      src="https://mc.yandex.ru/watch/109799623"
       style="position: absolute; left: -9999px"
       alt=""
     /></div
 ></noscript>
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 <!-- Hero Section -->
 <section class="hero">
   <div class="container">
@@ -165,9 +161,9 @@
         <div class="faq-answer">
           <div class="faq-answer__content">
             Первая консультация длится около 15-30 минут. Мы выслушаем вашу
-            проблему, проведем первичный анализ документов и предложим
-            варианты решения. Для первичной оценки этого достаточно, чтобы
-            вы понимали перспективы дела.
+            проблему, проведем первичный анализ документов и предложим варианты
+            решения. Для первичной оценки этого достаточно, чтобы вы понимали
+            перспективы дела.
           </div>
         </div>
       </div>
@@ -178,10 +174,9 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer__content">
-            Все зависит от вашей ситуации. Обычно это паспорт и любые
-            документы, имеющие отношение к делу: договоры, переписка,
-            судебные повестки или решения. Если вы не уверены, наш юрист
-            подскажет список при записи.
+            Все зависит от вашей ситуации. Обычно это паспорт и любые документы,
+            имеющие отношение к делу: договоры, переписка, судебные повестки или
+            решения. Если вы не уверены, наш юрист подскажет список при записи.
           </div>
         </div>
       </div>
@@ -194,8 +189,8 @@
           <div class="faq-answer__content">
             Стоимость услуг индивидуальна и зависит от сложности дела. Мы
             работаем прозрачно: фиксируем стоимость в договоре, и она не
-            меняется в процессе работы. Ознакомиться с базовыми тарифами
-            можно в разделе «Цены».
+            меняется в процессе работы. Ознакомиться с базовыми тарифами можно в
+            разделе «Цены».
           </div>
         </div>
       </div>
@@ -227,11 +222,7 @@
           Посетите наш офис в Калининграде или оставьте заявку онлайн. Мы
           перезвоним вам в течение 15 минут в рабочее время.
         </p>
-        <div
-          id="index-map"
-          class="map-container"
-          style="height: 350px"
-        ></div>
+        <div id="index-map" class="map-container" style="height: 350px"></div>
       </div>
 
       <div class="consultation-form-wrapper">
@@ -309,10 +300,7 @@
               >
             </label>
           </div>
-          <button
-            type="submit"
-            class="btn btn--primary btn--block btn--dark"
-          >
+          <button type="submit" class="btn btn--primary btn--block btn--dark">
             Отправить
           </button>
         </form>
@@ -320,9 +308,7 @@
     </div>
   </div>
 </section>
-{% endblock %}
-
-{% block scripts %}
+{% endblock %} {% block scripts %}
 <script
   src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ваш_ключ"
   type="text/javascript"
